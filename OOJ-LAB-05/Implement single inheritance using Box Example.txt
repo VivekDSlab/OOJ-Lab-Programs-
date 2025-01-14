@@ -1,0 +1,29 @@
+class Shape {
+    protected double width;
+    protected double height;
+
+    public Shape(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+    public double calculateArea() {
+        return width * height;
+    }
+}
+class Box extends Shape {
+    private double depth;
+    public Box(double width, double height, double depth) {
+        super(width, height); 
+        this.depth = depth;
+    }
+    public double calculateVolume() {
+        return calculateArea() * depth; 
+    }
+}
+public class InheritanceExample {
+    public static void main(String[] args) {
+        Box myBox = new Box(5.0, 10.0, 3.0);
+        System.out.println("Area of the box's base: " + myBox.calculateArea());
+        System.out.println("Volume of the box: " + myBox.calculateVolume());
+    }
+}
